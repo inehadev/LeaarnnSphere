@@ -70,7 +70,7 @@ const Dashboard = () => {
 
             </div>
 
-            <div className='min-h-vh flex flex-col  justify-evenly gap-[300px] items-center'>
+            <div className='min-h-vh flex flex-col  justify-evenly gap-[300px]  items-center'>
                 <div>
                      <p className='text-white text-4xl  mt-[15%]'> Welcome to LearnSphere!</p>
                 </div>
