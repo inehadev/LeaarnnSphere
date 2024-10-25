@@ -123,7 +123,7 @@ const Dashboard = () => {
 
             <div className='text-white mt-5'>
     {response ? (
-        <pre>{response}</pre>
+        <div dangerouslySetInnerHTML={{ __html: response }} />
     ) : (
         <div>
             <p className='text-white text-4xl mt-[15%]'> Welcome to LearnSphere!</p>
