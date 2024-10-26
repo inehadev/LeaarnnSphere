@@ -64,6 +64,7 @@
 
 import React, { useState } from 'react';
 import axios from 'axios';
+import Link from 'react-router-dom'
 
 const Dashboard = () => {
     const [text, setText] = useState('');
@@ -114,7 +115,7 @@ const Dashboard = () => {
             <div className='h-[70px] flex justify-between items-center'>
                 <div className='flex items-center'>
                     <img src='/logo-.png' alt='logo' className='h-[70px] w-[70px] mt-1 ml-5' />
-                    <h1 className='text-white text-2xl'>Learn<span className='text-blue-300 text-xl'>sphere</span></h1>
+                   <Link to='/'><h1 className='text-white text-2xl'>Learn<span className='text-blue-300 text-xl'>sphere</span></h1></Link> 
                 </div>
             </div>
 
@@ -122,7 +123,7 @@ const Dashboard = () => {
                
 
             <div className='text-white mt-5'>
-    {response ? (
+    {response ?(
         <div dangerouslySetInnerHTML={{ __html: response }} />
     ) : (
         <div>
