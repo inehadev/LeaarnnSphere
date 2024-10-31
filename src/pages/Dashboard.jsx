@@ -13,6 +13,7 @@ const Dashboard = () => {
       });
       const updatedHtml = modifyHtml(data.message);
       setResponse(updatedHtml);
+      console.log(data)
     } catch (error) {
       console.log("Error in AI response", error);
     }
