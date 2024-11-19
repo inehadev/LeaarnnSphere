@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 export default function SignUp() {
+  const navigate = useNavigate();
   const [email, setemail] = useState("");
   const [username, setusername] = useState("");
   const [password, setpassword] = useState("");
@@ -31,6 +32,7 @@ export default function SignUp() {
     console.log(response);
 
     alert("user is register successfully");
+    navigate('/sign-up')
   };
 
   return (

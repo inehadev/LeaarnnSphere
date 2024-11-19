@@ -2,6 +2,7 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 
 const Header = () => {
+  
   return (
     <div>
         <div className='h-[70px]  flex justify-between items-center '>
@@ -18,7 +19,7 @@ const Header = () => {
 
       <div className=' flex items-center font mt-4 gap-7 mr-10 '>
         <Link to = '/sign-in'><button className=' bg-gray-700 px-3 hover:bg-blue-500 text-md rounded-lg py-1 text-white'>Login</button></Link>
-        <button  className=' bg-blue-400 px-3 hover:bg-gray-700 text-md rounded-lg py-1 text-white'>Get Started</button>
+        <button  className=' bg-blue-400 px-3 hover:bg-gray-700 text-md rounded-lg py-1 text-white'><Link  to={'/dashboard'}>Get Started </Link></button>
       </div>
     </div>
       

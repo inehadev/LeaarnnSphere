@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useSubmit } from "react-router-dom";
+import { Loader } from 'lucide-react';
 
 const Dashboard = () => {
   const [text, setText] = useState("");
   const [response, setResponse] = useState("");
+  const [loader , setloader]=useState(false);
 
   const handleResponse = async () => {
+    setloader(true);
     try {
       const { data } = await axios.post("http://localhost:3000/aiResponse", {
         userTask: text,
@@ -16,8 +19,11 @@ const Dashboard = () => {
       console.log(data)
     } catch (error) {
       console.log("Error in AI response", error);
+    }finally{
+      setloader(false);
     }
   };
+
 
   const handleenter=(e)=>{
     if(e.key ==='Enter'){
@@ -109,7 +115,11 @@ const Dashboard = () => {
             className="h-9 text-white text-opacity-55 mr-2 m-1 text-lg bg-blue-500 rounded-full px-4"
             onClick={handleResponse}
           >
-            Submit
+           {loader ? (
+            <Loader className="animate-spin text-white "/>
+           ):(
+            "Submit"
+           ) }
           </button>
         </div>
       </div>

@@ -1,9 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 
 export default function SignIn() {
+  const navigate = useNavigate();
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
 
@@ -30,6 +31,7 @@ export default function SignIn() {
     console.log(response);
 
     alert("user is login successfully");
+    navigate('/')
   };
 
   return (
